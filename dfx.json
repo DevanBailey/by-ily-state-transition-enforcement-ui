@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "canisters": {
+    "state_transition_backend": {
+      "type": "motoko",
+      "main": "backend/main.mo",
+      "dependencies": []
+    },
+    "state_transition_frontend": {
+      "type": "assets",
+      "source": ["frontend/dist"],
+      "dependencies": ["state_transition_backend"]
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    }
+  },
+  "output_env_file": ".env"
+}
